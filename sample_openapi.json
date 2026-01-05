@@ -1,0 +1,36 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sample Weather API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {"url": "https://api.example.com"}
+  ],
+  "paths": {
+    "/weather/current": {
+      "get": {
+        "operationId": "get_current_weather",
+        "summary": "Get current weather",
+        "parameters": [
+          {
+            "name": "city",
+            "in": "query",
+            "required": true,
+            "schema": {"type": "string"}
+          }
+        ],
+        "x-mock-response": {
+          "city": "Seattle",
+          "temperature_c": 12,
+          "condition": "Cloudy"
+        },
+        "responses": {
+          "200": {
+            "description": "Current weather"
+          }
+        }
+      }
+    }
+  }
+}
